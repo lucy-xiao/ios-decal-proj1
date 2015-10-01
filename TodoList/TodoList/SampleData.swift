@@ -9,6 +9,6 @@
 import Foundation
 
 let tasksData = [
-    Task(task:"Homework"),
-    Task(task: "Test"),
-    Task(task: "Fun")]
+    Task(taskName:"Homework"),
+    Task(taskName: "Test"),
+    Task(taskName: "Fun")]

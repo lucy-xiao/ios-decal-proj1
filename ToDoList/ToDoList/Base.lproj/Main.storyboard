@@ -7,7 +7,7 @@
         <!--Add Task-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskDetailsViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,11 +32,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="400-Ro-SWz">
                             <connections>
-                                <segue destination="cel-c0-tmp" kind="unwind" unwindAction="saveTaskDetail:" id="CIv-Jl-x7i"/>
+                                <segue destination="cel-c0-tmp" kind="unwind" identifier="SaveTaskDetail" unwindAction="saveTaskDetail:" id="CIv-Jl-x7i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="taskTextField" destination="h2M-vv-eUU" id="sZU-Qc-9co"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="cel-c0-tmp" userLabel="Exit" sceneMemberID="exit"/>
@@ -70,6 +73,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="XD1-dK-87b" id="nAe-tF-1Vd"/>
                             <outlet property="delegate" destination="XD1-dK-87b" id="cIi-SJ-fW0"/>

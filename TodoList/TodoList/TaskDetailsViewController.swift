@@ -9,8 +9,19 @@
 //import Cocoa
 import UIKit
 
-class TaskDetailsViewController: UITableViewController {
-        
+
+
+class TaskDetailsViewController: UIViewController {
+    
+    var task:Task?
+    
+    @IBOutlet weak var taskTextField: UITextField!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveTaskDetail" {
+            task = Task(taskName: taskTextField.text! )
+        }
+    }
         override func viewDidLoad() {
             super.viewDidLoad()
             

@@ -9,9 +9,9 @@
 import UIKit
 
 struct Task {
-    var task: String?
+    var taskName: String?
     
-    init(task: String?) {
-        self.task = task
+    init(taskName: String?) {
+        self.taskName = taskName
     }
 }

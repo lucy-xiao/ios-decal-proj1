@@ -69,7 +69,7 @@ class TaskViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath)
             
             let task = tasks[indexPath.row] as Task
-            cell.textLabel?.text = task.task
+            cell.textLabel?.text = task.taskName
 //            cell.detailTextLabel?.text = task.task
             return cell
     }
@@ -114,5 +114,16 @@ class TaskViewController: UITableViewController {
     }
     
     @IBAction func saveTaskDetail(segue:UIStoryboardSegue) {
+        if let taskDetailsViewController = segue.sourceViewController as? TaskDetailsViewController {
+            
+            //add the new player to the players array
+            if let newTask = taskDetailsViewController.task {
+                tasks.append(newTask)
+                
+                //update the tableView
+                let indexPath = NSIndexPath(forRow: tasks.count-1, inSection: 0)
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
+        }
     }
 }
