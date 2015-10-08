@@ -10,6 +10,12 @@ import UIKit
 
 struct Task {
     var taskName: String?
+    var completed = false
+    
+//    init() {
+//        self.taskName = "";
+//        self.completed = false;
+//    }
     
     init(taskName: String?) {
         self.taskName = taskName

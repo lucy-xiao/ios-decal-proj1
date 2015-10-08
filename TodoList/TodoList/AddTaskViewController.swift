@@ -11,15 +11,19 @@ import UIKit
 
 
 
-class TaskDetailsViewController: UIViewController {
+class AddTaskViewController: UIViewController {
     
     var task:Task?
     
+    @IBOutlet weak var saveTask: UIBarButtonItem!
     @IBOutlet weak var taskTextField: UITextField!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveTaskDetail" {
-            task = Task(taskName: taskTextField.text! )
+        if (sender !== self.saveTask ) {
+            return
+        }
+        if (taskTextField.text!.characters.count > 0 ) {
+            task = Task(taskName: taskTextField.text!)
         }
     }
         override func viewDidLoad() {
